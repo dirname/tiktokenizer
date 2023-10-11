@@ -11,6 +11,7 @@ import {
   CommandSeparator,
 } from "~/components/Command";
 import { Popover, PopoverContent, PopoverTrigger } from "~/components/Popover";
+import {useTranslations} from "next-intl";
 
 const MODELS = [
   "text-davinci-003",
@@ -74,6 +75,7 @@ export function EncoderSelect(props: {
   value: ModelOnly;
   onChange: (value: ModelOnly) => void;
 }) {
+  const t = useTranslations();
   const [open, setOpen] = useState(false);
   const serializedValue =
     "encoder" in props.value
@@ -112,9 +114,9 @@ export function EncoderSelect(props: {
         </PopoverTrigger>
         <PopoverContent className="max-h-[70vh] overflow-auto p-0 pb-2">
           <Command>
-            <CommandInput placeholder="Search model or encoder..." />
+            <CommandInput placeholder={t('searchTips')} />
             <CommandEmpty>No model or encoder found.</CommandEmpty>
-            <CommandGroup heading="Popular">
+            <CommandGroup heading={t('popular')}>
               {POPULAR.map((value) => (
                 <CommandItem
                   key={value}
@@ -130,7 +132,7 @@ export function EncoderSelect(props: {
 
             <CommandSeparator />
 
-            <CommandGroup heading="Encoders">
+            <CommandGroup heading={t('encoders')}>
               {ENCODERS.filter((x) => !POPULAR.includes(x)).map((value) => (
                 <CommandItem
                   key={value}
@@ -144,7 +146,7 @@ export function EncoderSelect(props: {
 
             <CommandSeparator />
 
-            <CommandGroup heading="Models">
+            <CommandGroup heading={t('models')}>
               {MODELS.filter((x) => !POPULAR.includes(x)).map((value) => (
                 <CommandItem
                   key={value}

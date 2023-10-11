@@ -1,0 +1,21 @@
+{
+  "title": "Tiktokenizer - PuerHub AI Tools",
+  "tiktokenizer": "Tiktokenizer",
+  "switchLocale": "Switch to {locale, select, zh {简体中文} en {English} other {Unknown}}",
+  "poweredBy": "Powered by",
+  "systemPrompt": "You are a helpful assistant",
+  "user": "User",
+  "system": "System",
+  "assistant": "Assistant",
+  "custom": "Custom",
+  "name": "Name",
+  "content": "Content",
+  "addMessage": "Add Message",
+  "tokenCount": "Token count",
+  "pricePerPrompt": "Price per prompt",
+  "showWhitespace": "Show whitespace",
+  "popular": "Popular",
+  "encoders": "Encoders",
+  "models": "Models",
+  "searchTips": "Search model or encoder..."
+}

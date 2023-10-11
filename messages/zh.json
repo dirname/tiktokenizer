@@ -1,0 +1,21 @@
+{
+  "title": "Token 计数器 - PuerHub AI 工具",
+  "tiktokenizer": "Token 计数器",
+  "switchLocale": "切换至 {locale, select, zh {简体中文} en {English} other {未知}}",
+  "poweredBy": "Powered by",
+  "systemPrompt": "You are a helpful assistant",
+  "user": "用户",
+  "system": "预设",
+  "assistant": "GPT",
+  "custom": "自定义",
+  "name": "名称",
+  "content": "内容",
+  "addMessage": "添加消息",
+  "tokenCount": "Token 数",
+  "pricePerPrompt": "价格",
+  "showWhitespace": "显示空白字符",
+  "popular": "热门",
+  "encoders": "编码",
+  "models": "模型",
+  "searchTips": "搜索模型或编码..."
+}

@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.localeSwitcher {
+    font-size: 14px;
+    font-weight: 400;
+    color: #18a058;
+}
+
+.localeSwitcher:hover {
+    color: #36ad6a;
+    text-decoration: underline;
+}

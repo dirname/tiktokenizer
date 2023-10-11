@@ -3,6 +3,7 @@ import { cn } from "~/utils/cn";
 
 import BN from "bignumber.js";
 import { Checkbox } from "~/components/Checkbox";
+import {useTranslations} from "next-intl";
 
 const COLORS = [
   "bg-sky-200",
@@ -55,6 +56,7 @@ export function TokenViewer(props: {
     | Array<{ text: string; tokens: { id: number; idx: number }[] }>
     | undefined;
 }) {
+  const t = useTranslations();
   const [indexHover, setIndexHover] = useState<null | number>(null);
 
   const tokenCount =
@@ -67,13 +69,13 @@ export function TokenViewer(props: {
     <>
       <div className="flex gap-4">
         <div className="flex-grow rounded-md border bg-slate-50 p-4 shadow-sm">
-          <p className="text-sm ">Token count</p>
+          <p className="text-sm ">{t('tokenCount')}</p>
           <p className="text-lg">{tokenCount}</p>
         </div>
 
         {pricing != null && (
           <div className="flex-grow rounded-md border bg-slate-50 p-4 shadow-sm">
-            <p className="text-sm ">Price per prompt</p>
+            <p className="text-sm ">{t('pricePerPrompt')}</p>
             <p className="text-lg">
               ${pricing?.multipliedBy(tokenCount)?.toFixed()}
             </p>
@@ -149,7 +151,7 @@ export function TokenViewer(props: {
           htmlFor="terms"
           className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
         >
-          Show whitespace
+          {t('showWhitespace')}
         </label>
       </div>
     </>

@@ -10,6 +10,7 @@ import {
 import { X as Close } from "lucide-react";
 import { Button } from "~/components/Button";
 import { Input, TextArea } from "~/components/Input";
+import {useTranslations} from "next-intl";
 
 function getChatGPTEncoding(
   messages: { role: string; content: string; name: string }[],
@@ -34,10 +35,11 @@ export function ChatGPTEditor(props: {
   model: "gpt-4" | "gpt-4-32k" | "gpt-3.5-turbo";
   onChange: (value: string) => void;
 }) {
+  const t= useTranslations();
   const [rows, setRows] = useState<
     { role: string; content: string; name: string }[]
   >([
-    { role: "system", content: "You are a helpful assistant", name: "" },
+    { role: "system", content: t('systemPrompt'), name: "" },
     { role: "user", content: "", name: "" },
   ]);
 
@@ -69,11 +71,11 @@ export function ChatGPTEditor(props: {
                 <SelectValue placeholder="Role" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="user">User</SelectItem>
-                <SelectItem value="system">System</SelectItem>
-                <SelectItem value="assistant">Assistant</SelectItem>
+                <SelectItem value="user">{t('user')}</SelectItem>
+                <SelectItem value="system">{t('system')}</SelectItem>
+                <SelectItem value="assistant">{t('assistant')}</SelectItem>
                 <SelectSeparator />
-                <SelectItem value="system-name">Custom</SelectItem>
+                <SelectItem value="system-name">{t('custom')}</SelectItem>
               </SelectContent>
             </Select>
 
@@ -81,7 +83,7 @@ export function ChatGPTEditor(props: {
               {row.role === "system-name" && (
                 <Input
                   value={row.name}
-                  placeholder="Name"
+                  placeholder={t('name')}
                   onChange={(e) =>
                     setRows((rows) => {
                       const newRows = [...rows];
@@ -96,7 +98,7 @@ export function ChatGPTEditor(props: {
               <TextArea
                 rows={1}
                 value={row.content}
-                placeholder="Content"
+                placeholder={t('content')}
                 onChange={(e) =>
                   setRows((rows) => {
                     const newRows = [...rows];
@@ -139,7 +141,7 @@ export function ChatGPTEditor(props: {
           })
         }
       >
-        Add message
+          {t('addMessage')}
       </Button>
     </div>
   );

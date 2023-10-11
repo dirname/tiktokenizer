@@ -9,7 +9,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "tiktoken": "^1.0.10",
     "@radix-ui/react-checkbox": "^1.0.3",
     "@radix-ui/react-popover": "^1.0.5",
     "@radix-ui/react-select": "^1.2.0",
@@ -26,11 +25,13 @@
     "graphemer": "^1.4.0",
     "lucide-react": "^0.119.0",
     "next": "^13.2.1",
+    "next-intl": "^2.20.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "superjson": "1.9.1",
     "tailwind-merge": "^1.10.0",
     "tailwindcss-animate": "^1.0.5",
+    "tiktoken": "^1.0.10",
     "zod": "^3.20.6"
   },
   "devDependencies": {
